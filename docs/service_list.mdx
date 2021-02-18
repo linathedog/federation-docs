@@ -1,0 +1,101 @@
+---
+id: service_list
+title: Services and Petitions
+sidebar_label: Services and Petitions
+slug: /service_list
+---
+import {ImageExpand} from '../src/components/components';
+
+
+
+
+## Manage Services
+Services and petitions can be managed by accessing the manage services page available in the side menu on the left of the screen. In the manage services page a user can view all the available services to him, End users can only view services they own and administrators can view all available services.
+
+- Service list view with explanations <ImageExpand image_url='/screenshots/service_list.png'/>
+- New user view with no available services <ImageExpand image_url='/screenshots/service_list_empty.png'/>
+
+**Available Actions**
+- [View Services](#view-service)
+- [Register a Service](#create-a-registration-petition-request)
+- [Reconfigure a Service/Edit a Petition](#create-reconfiguration-petition-or-edit-an-open-petition)
+- [Deregister a Service](#create-a-deregistration-petition)
+- [Cancel an Open Petition](#cancel-an-open-petition)
+- [Manage Ownership of a Service](#manage-ownership-of-a-service)
+- [View Service History](#view-service-history)
+- [Review a Petition (Only Administrators)](#review-a-petition-administrators-only)
+- [View and resolve a deployment Errors (Only Administrators)](#view-and-manage-deployment-errors-administrators-only)
+
+## View Service
+A user can click the view button on a service list item to view the current configuration of a service. The full service configuration is split between two tabs, the General Tab and the Protocol Tab.
+- Service View with explanations <ImageExpand image_url='/screenshots/view_service.png'/>
+
+## Create/Edit/Cancel Petitions
+
+A Petition can request either to register, reconfigure or deregister a service, users can create edit and cancel petitions for services they own:
+
+### Create a Registration Petition Request
+
+To create a new service a user must create a registration petition by clicking the new service button in the toolbar located in the manage services page. This button redirects the user to a new page where he will have to fill out a form by providing the following information.
+- General information about the service (Service Name, Description) located in the first tab.
+- And more specific technical information in the second tab concerning the protocol of the service SAML/OIDC
+
+
+### Create Reconfiguration Petition or edit an Open Petition
+
+To create a reconfiguration petition or edit an existing one, the user must own a service that is in a deployed state. To find it in the service list view the user can use the filters or the search box provided in the Service List page toolbar and then click the Reconfigure button to create/edit the petition. The reconfiguration button will open a new page containing the current state of the service or of the open petition. User can edit any of the fields and submit the petition request.
+
+### Create a Deregistration Petition
+
+To create a Deregistration Petition, the user must own a service that is in a deployed state. To find it in the service list view the user can use the filters or the search box provided in the Service List page toolbar and then click the more options located in the top right corner of the service box and select Deregister Service.
+
+
+### Cancel An Open Petition
+Canceling an open petition can either be done in the more options menu or in the edit petition page (accessed using the reconfiguration button when an open petition exists) by using the cancel request button.
+
+More Options Cancel Request Option <ImageExpand image_url='/screenshots/cancel_request_list.png'/>
+
+Cancel Request In the Edit Petition Page <ImageExpand image_url='/screenshots/cancel_request_form.png'/>
+
+
+## Manage Ownership of a Service
+
+Services are owned by groups of users. Members of the group can be simple members or group managers. All group members can view the service and also create petitions. Group managers can also invite or remove members to and from the group. When a user requests to create a service an owners group is created for that service, note that the creator of this request is also a group manager.
+
+Group Management Page View with explanations <ImageExpand image_url='/screenshots/owners_group.png'/>
+
+To manage/view the owners group of a service we must locate target service in the List View and select the Manage Services in the more options menu. Once in the Manage Group page the user can
+View group members
+- Leave the group (a group must have at least on user and one group manager)
+- Send an Invitation Link to an email address using the email invitation box  (Only group managers, and administrators)
+- View pending invitations (Only group managers)
+- Renew/Resend an Invitation (Only group managers)
+- Remove Group Members (Only group managers)
+
+## View Service History
+
+After a service is registered a user can access all petitions that have been reviewed for that service in View History page which can be accessed through the more options menu in the Service List page located in the service box. All petitions are initially listed in the History View in chronological order starting from registration. User can view each snapshot which contains the full configuration by clicking the View Button.
+
+View History Page View with explanations <ImageExpand image_url='/screenshots/histoly_list.png'/>
+
+## Review a Petition (Administrators Only)
+
+Administrators are notified when a new petition is created and is pending review. To find services with pending petitions administrators can use the Pending Services filter. When a service has a pending petition a review button is available in the service box item. By clicking that button an administrator can view the requested service configuration and submit a review using the review expandable menu. A review can either:
+
+- **Approve**: approving a petition starts the deployment of the requested service configuration described in the reviewed petition.
+- **Reject**: if the reviewer finds that the requested petition is not valid he can reject it canceling the petition request.
+- **Request Changes**: reviewer can propose changes to the pending petition by leaving a comment describing the changes that have to be made.
+
+*Important note: Notifications are sent via email both to the administrators when a new petition is created and to service owners when a petition is reviewed.
+
+Review Service View screenshot with explanations <ImageExpand image_url='/screenshots/review_form.png'/>
+
+Review Reconfiguration Petition screenshot with explanations <ImageExpand image_url='/screenshots/review_edit.png'/>
+
+Review Box screenshot with explanations <ImageExpand image_url='/screenshots/review_box.png'/>
+
+## View and Manage Deployment Errors (Administrators Only)
+The deployment of service can sometimes fail due to 3rd party reasons and produce an error. Services in the Service List view that have errors will have the deployment malfunctioned badge next to their name and a notification in the View Service button. Users can view more information about the error in the View Service page and also select an action to take in order to restore the state of the service.
+Service List View screenshot
+
+Error Box screenshot <ImageExpand image_url='/screenshots/error_box.png'/>
