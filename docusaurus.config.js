@@ -74,6 +74,9 @@ module.exports = {
           editUrl:
             'https://federation.aai-dev.grnet.gr/swagger',
         },
+        theme: {
+          customCss: require.resolve('./src/css/custom.css'),
+        },
       },
     ],
   ],

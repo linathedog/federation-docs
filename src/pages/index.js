@@ -67,8 +67,9 @@ function Home() {
           <p className="hero__subtitle" style={{color:'black'}}>{siteConfig.tagline}</p>
           <div className={styles.buttons}>
             <Link
+              style={{borderColor:'#303846'}}
               className={clsx(
-                'button button--outline button--secondary button--lg main-page-button',
+                'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
               to={useBaseUrl('docs/')}>

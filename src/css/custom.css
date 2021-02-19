@@ -26,8 +26,5 @@
 }
 
 .custom-link:hover {
-  text-decoration: underline;
-}
-.main-page-button {
-  border-color: #303846;
+  text-decoration: underline!important;
 }
