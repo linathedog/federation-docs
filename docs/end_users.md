@@ -10,13 +10,13 @@ __Step 1:__
 Use the New Service button in the manage services page to access the registration form
 
 __Step 2:__
-Fill the necessary form fields and submit the form to create a registration petition request
+Fill the necessary form fields and submit the form to create a registration request
 
 __Step 3:__ (Optional)
-Edit or cancel the petition by locating the service in the Service List view and using the reconfigure button to open the edit form page. Cancel the petition by locating the service in the Service List view and using the more options  
+Edit or cancel the request by locating the service in the Service List view and using the reconfigure button to open the edit form page. Cancel the request by locating the service in the Service List view and using the more options  
 
 __Step 4:__
-Wait for an administrator to review and approve your petition and for the deployment process to finish.
+Wait for an reviewer to review your request (in the development environment service owners can also self approve their requests) and if the request is approved for the deployment process to finish.
 
 ### Reconfigure a Service
 __Step 1:__
@@ -24,33 +24,33 @@ Locate in the Service List view the service you want reconfigure
 
 __Step 2:__Use the reconfiguration button to open an editable form with the current service configuration loaded in
 
-__Step 3:__Alter any fields you want and submit your petition request
+__Step 3:__Alter any fields you want and submit your request
 
-__Step 4:__Wait for an administrator to review your petition
+__Step 4:__Wait for a reviewer to review your request
 
-### Edit an Open Petition
-__*__open is a petition that has not yet been reviewed
+### Edit a Pending Request
+__*__Pending is a request that has not yet been reviewed
 
 __Step 1:__
-Locate the service that has the pending petition badge next to it’s name and then use the reconfigure button to open edit page
+Locate the service that has the pending review badge next to it’s name and then use the reconfigure button to open edit page
 
 __Step 2:__
 Alter any fields needed and resubmit the form for changes to take effect
 
-### Administrator Has Requested Changes
-An administrator when reviewing a petition can request some changes to be made to the service configuration. Users will be notified with an email. In the Service List view users can recognise services that have changes requested by an administrator from the notification on the reconfiguration button.
+### Reviewer Has Requested Changes
+When a user is reviewing a request they can request some changes to be made to the service configuration. In such case users will be notified with an email. In the Service List view users can identify services that have changes requested by a reviewer from the changes requested badge and the red exclamation mark on the reconfiguration button.
 
 __Step 1:__
-Locate service with the petition that has some requested changes and click the reconfiguration button
+Locate service with the request that has some requested changes and click on the reconfiguration button
 
 __Step 2:__
-Follow the instructions in the comment left by the administrator to alter the necessary fields
+Follow the instructions in the comment left by the reviewer to alter the necessary fields
 
 __Step 3:__
-Wait for an administrator to review your petition (an email notification is sent to the owners when a petition reviewed)
+Wait for an administrator to review your request (an email notification is sent to the owners when a request is reviewed)
 
 __Step 4:__
-If your petition is approved then wait for the deployment process to finish
+If your request is approved then wait for the deployment process to finish
 
 ### Invite Users to manage a service
 Only group managers can send invites
@@ -94,4 +94,4 @@ __Step 2:__
 Select View History option in the more options menu to open View History Page
 
 __Step 3:__
-Listed in chronological order are the previous reviewed petitions and any currently open petitions for the service. Using the view button you can view the complete configuration o a petition.
+Listed in chronological order are the previous reviewed requests and any currently pending requests for the service. Using the view button you can view the complete configuration of a service request.

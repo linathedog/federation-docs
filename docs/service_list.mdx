@@ -1,7 +1,7 @@
 ---
 id: service_list
-title: Services and Petitions
-sidebar_label: Services and Petitions
+title: Services and Service Requests
+sidebar_label: Services and Service Requests
 slug: /service_list
 ---
 import {ImageExpand} from '../src/components/components';
@@ -10,57 +10,57 @@ import {ImageExpand} from '../src/components/components';
 
 
 ## Manage Services
-Services and petitions can be managed by accessing the manage services page available in the side menu on the left of the screen. In the manage services page a user can view all the available services to him, End users can only view services they own and administrators can view all available services.
+Services can be managed by accessing the manage services page available in the side menu on the left of the screen. In the manage services page a user can view all the available services to him, End users can only view services they own and Operators and Managers can view all available services.
 
 - Service list view with explanations <ImageExpand image_url='/screenshots/service_list.png'/>
 - New user view with no available services <ImageExpand image_url='/screenshots/service_list_empty.png'/>
 
 **Available Actions**
 - [View Services](#view-service)
-- [Register a Service](#create-a-registration-petition-request)
-- [Reconfigure a Service/Edit a Petition](#create-reconfiguration-petition-or-edit-an-open-petition)
-- [Deregister a Service](#create-a-deregistration-petition)
-- [Cancel an Open Petition](#cancel-an-open-petition)
+- [Register a Service](#create-a-registration-request)
+- [Reconfigure a Service/Edit a Service Request](#create-reconfiguration-request-or-edit-an-open-request)
+- [Deregister a Service](#create-a-deregistration-request)
+- [Cancel an Open Service Request](#cancel-an-open-request)
 - [Manage Ownership of a Service](#manage-ownership-of-a-service)
 - [View Service History](#view-service-history)
-- [Review a Petition (Only Administrators)](#review-a-petition-administrators-only)
+- [Review a Request (Only Administrators)](#review-a-request-administrators-only)
 - [View and resolve a deployment Errors (Only Administrators)](#view-and-manage-deployment-errors-administrators-only)
 
 ## View Service
 A user can click the view button on a service list item to view the current configuration of a service. The full service configuration is split between two tabs, the General Tab and the Protocol Tab.
 - Service View with explanations <ImageExpand image_url='/screenshots/view_service.png'/>
 
-## Create/Edit/Cancel Petitions
+## Create/Edit/Cancel Service Requests
 
-A Petition can request either to register, reconfigure or deregister a service, users can create edit and cancel petitions for services they own:
+A Service Request can request either to register, reconfigure or deregister a service, users can create edit and cancel Service Requests for services they own:
 
-### Create a Registration Petition Request
+### Create a Registration Request for a Service
 
-To create a new service a user must create a registration petition by clicking the new service button in the toolbar located in the manage services page. This button redirects the user to a new page where he will have to fill out a form by providing the following information.
+To create a new service a user must create a registration request by clicking the new service button in the toolbar located in the manage services page. This button redirects the user to a new page where he will have to fill out a form by providing the following information.
 - General information about the service (Service Name, Description) located in the first tab.
 - And more specific technical information in the second tab concerning the protocol of the service SAML/OIDC
 
 
-### Create Reconfiguration Petition or edit an Open Petition
+### Create Reconfiguration Request or edit an Open Service Request
 
-To create a reconfiguration petition or edit an existing one, the user must own a service that is in a deployed state. To find it in the service list view the user can use the filters or the search box provided in the Service List page toolbar and then click the Reconfigure button to create/edit the petition. The reconfiguration button will open a new page containing the current state of the service or of the open petition. User can edit any of the fields and submit the petition request.
+To create a reconfiguration request or edit an existing one, the user must own a service that is in a deployed state. To find it in the service list view the user can use the filters or the search box provided in the Service List page toolbar and then click the Reconfigure button to create/edit the request. The reconfiguration button will open a new page containing the current state of the service or of the pending request. User can edit any of the fields and submit the request.
 
-### Create a Deregistration Petition
+### Create a Deregistration Request
 
-To create a Deregistration Petition, the user must own a service that is in a deployed state. To find it in the service list view the user can use the filters or the search box provided in the Service List page toolbar and then click the more options located in the top right corner of the service box and select Deregister Service.
+To create a Deregistration Request, the user must own a service that is in a deployed state. To find it in the service list view the user can use the filters or the search box provided in the Service List page toolbar and then click the more options located in the top right corner of the service box and select Deregister Service.
 
 
-### Cancel An Open Petition
-Canceling an open petition can either be done in the more options menu or in the edit petition page (accessed using the reconfiguration button when an open petition exists) by using the cancel request button.
+### Cancel An Open Service Request
+Canceling an open service request can either be done in the more options menu or in the edit request page (accessed using the reconfiguration button when there is a pending request) by using the cancel request button.
 
 More Options Cancel Request Option <ImageExpand image_url='/screenshots/cancel_request_list.png'/>
 
-Cancel Request In the Edit Petition Page <ImageExpand image_url='/screenshots/cancel_request_form.png'/>
+Cancel Request In the Edit Request Page <ImageExpand image_url='/screenshots/cancel_request_form.png'/>
 
 
 ## Manage Ownership of a Service
 
-Services are owned by groups of users. Members of the group can be simple members or group managers. All group members can view the service and also create petitions. Group managers can also invite or remove members to and from the group. When a user requests to create a service an owners group is created for that service, note that the creator of this request is also a group manager.
+Services are owned by groups of users. Members of the group can be simple members or group managers. All group members can view the service and also create requests for that service. Group managers can also invite or remove members to and from the group. When a user requests to registrer a service an owners group is automatially created for that service, note that the creator of this request is also a group manager.
 
 Group Management Page View with explanations <ImageExpand image_url='/screenshots/owners_group.png'/>
 
@@ -74,23 +74,23 @@ View group members
 
 ## View Service History
 
-After a service is registered a user can access all petitions that have been reviewed for that service in View History page which can be accessed through the more options menu in the Service List page located in the service box. All petitions are initially listed in the History View in chronological order starting from registration. User can view each snapshot which contains the full configuration by clicking the View Button.
+After a service is registered a user can access all requests that have been reviewed for that service in View History page which can be accessed through the more options menu in the Service List page located in the service box. All reviewed requests are listed in the History View in chronological order starting from registration. User can view each snapshot which contains the full configuration by clicking the View Button.
 
 View History Page View with explanations <ImageExpand image_url='/screenshots/history_list.png'/>
 
-## Review a Petition (Administrators Only)
+## Review a Service Request (Users with reviewing rights)
 
-Administrators are notified when a new petition is created and is pending review. To find services with pending petitions administrators can use the Pending Services filter. When a service has a pending petition a review button is available in the service box item. By clicking that button an administrator can view the requested service configuration and submit a review using the review expandable menu. A review can either:
+Users with reviewing privileges are notified when a new request is created and is pending review. To find services with pending requests users can use the Pending Services filter. When a service has a pending request the review button will be available in the service box item. By clicking that button a user can view the requested service configuration and submit a review using the review expandable menu. A review can either:
 
-- **Approve**: approving a petition starts the deployment of the requested service configuration described in the reviewed petition.
-- **Reject**: if the reviewer finds that the requested petition is not valid he can reject it canceling the petition request.
-- **Request Changes**: reviewer can propose changes to the pending petition by leaving a comment describing the changes that have to be made.
+- **Approve**: approving a request starts the deployment of the requested service configuration described in the reviewed request.
+- **Reject**: if the reviewer decides that the requested is not valid he can reject it canceling the request.
+- **Request Changes**: reviewer can propose changes to the pending request by leaving a comment describing the changes that have to be made.
 
-*Important note: Notifications are sent via email both to the administrators when a new petition is created and to service owners when a petition is reviewed.
+*Important note: Notifications are sent via email to the reviewers when a new request is created and to service owners when the request is reviewed.
 
 Review Service View screenshot with explanations <ImageExpand image_url='/screenshots/review_form.png'/>
 
-Review Reconfiguration Petition screenshot with explanations <ImageExpand image_url='/screenshots/review_edit.png'/>
+Review Reconfiguration Request screenshot with explanations <ImageExpand image_url='/screenshots/review_edit.png'/>
 
 Review Box screenshot with explanations <ImageExpand image_url='/screenshots/review_box.png'/>
 

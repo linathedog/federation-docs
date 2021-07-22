@@ -5,7 +5,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/egi_logo.gif',
+  favicon: 'img/grnet-favicon.png',
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
@@ -13,7 +13,7 @@ module.exports = {
       title: 'Federation Registry Documentation',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/egi_logo.gif',
+        src: '/img/grnet-logo.png',
       },
       items: [
         {
@@ -46,7 +46,7 @@ module.exports = {
           items: [
             {
               label: 'Api Documentation',
-              to: 'https://federation.aai-dev.grnet.gr/swagger',
+              to: 'https://federation.rciam.grnet.gr/swagger',
             },
             {
               label: 'GitHub',
@@ -72,7 +72,7 @@ module.exports = {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://federation.aai-dev.grnet.gr/swagger',
+            'https://federation.rciam.grnet.gr/swagger',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

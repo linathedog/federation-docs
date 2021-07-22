@@ -6,9 +6,23 @@ slug: /invitations
 ---
 import {ImageExpand} from '../src/components/components';
 
-Invitations can be viewed in the view invitations page located in the side menu in the left side of the screen. Users can accept or decline invitations in the dedicated page.
-Users that have pending invitations will also be notified in a notification box in the Service List View.
+To manage a service in Federation Registry and be able to create requests users must be members of the owners group. 
+When a user submits a registration request they are automatically added to the owners group for that service and 
+additional users can also be added by sending invitations.
+Invitations are sent in the form of an email containing an invitation link. The invitation link will lead the user to 
+federation registry and upon login the invitation will be activated and linked to their account. All pending invitations will be displayed 
+in the invitations page, where the user can respond to each invitation by either accepting it or declining it.
+
+Users that have pending invitations will also be notified through a notification alert in the top of the Manage Services page.
 
 Invitation Page View with explanations <ImageExpand image_url='/screenshots/invitations_page.png'/>
 
 Invitation Notifications <ImageExpand image_url='/screenshots/invitations_notification.png'/>
+
+**Have you recieved an email invitation to manage a service through the Federation Registry?**
+
+Steps you need to take:
+
+1. Follow the invitation link
+2. Log in via Check-in (optional - this will not be necessary if you are already logged into the Federation Registry)
+3. Accept the service owner role. As a group manager you should then be able to invite additional users for managing the service. Please refer to the documentation [Managing the Ownership of a Service](service_list#manage-ownership-of-a-service) for more information.

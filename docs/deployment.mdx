@@ -7,6 +7,8 @@ slug: /deployment
 import {ImageExpand} from '../src/components/components';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-one, or a deregistration changes have to be deployed on some remote system. This is an automated asynchronous process that uses the argo messaging service to communicate with these remote systems. Services that undergo this process are under waiting deployment status and although they will be displayed in service list view and can be viewed, creating new petitions option will be blocked until they are deployed.
+Once a service request is approved changes have to be deployed on some remote system. If it is a registration request a new service must be deployed, if it is a reconfiguration request changes must be made to the deployed service and if it is a deregistration request a deployed service must be deleted.
+Services are managed by remote tools (MitreId, SSP, Keycloak) and when a request is approved federation registry initiates a process to deploy the changes that have been requested. This is an automated asynchronous process that uses the argo messaging service to communicate with these remote systems. Services that undergo this process are under waiting deployment status and although they will be displayed in service list view and can be viewed, users will be blocked from creating service requests until the service is deployed.
+Reconfiguration requests that dont change information that is tracked by the remote systems will be deployed immediatelly. 
 
 ![img](../static/img/screenshots/deployment_process.png)

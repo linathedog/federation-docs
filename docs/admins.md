@@ -1,19 +1,19 @@
 ---
 id: admins
-title: Administrators and Service Managers
-sidebar_label: Administrators and Service Managers
+title: Reviewal and other Priviledged Actions
+sidebar_label: Reviewal and other Priviledged Actions
 slug: /guideline/admins
 ---
 
-### Review a petition
+### Review a Request
 __Step 1:__
-Locate an open petition in the Service List view you want to review.
+Locate a service with a pending request in the Service List view you want to review.
 
 __Step 2:__
-Use the review button to open and view the petition. If a petition requests a reconfiguration changes will be highlighted
+Use the review button to open and view the request. If it is a reconfiguration request all changes will be highlighted
 
 __Step 3:__
-Submit your review by approving the petition if is ready to deployed or request changes if there are some mistakes in the submitted petition that can be fixed or finally you can reject the petition. Using the comment box you can leave a comment to the service owners.
+Submit your review by approving the service request if is ready to deployed or request changes if there are errors in the submitted request that can be fixed or rejecting it all together. Using the comment box you can also leave a comment to the service owners to inform them about your decision.
 
 ### Invite Users to manage a service
 __Step 1:__
