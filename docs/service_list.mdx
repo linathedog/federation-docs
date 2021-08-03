@@ -34,7 +34,7 @@ create edit and cancel Service Requests for services they own:
 - [Respond to Changes Requested to a Request](#changes-requested)
 - [Manage Ownership of a Service](#manage-ownership-of-a-service)
 - [View Service History](#view-service-history)
-- [Review a Request (Only Development Environment)](#review-a-request-administrators-only)
+- [Review a Request (Only Development Environment)](#review-a-request)
 
 ### View Service
 
@@ -110,6 +110,28 @@ can view the comment left from the reviewer. Submitting the request will resolve
 the changes requested by the reviewer and Service will once again be in the
 pending review state.
 
+### Manage Ownership of a Service
+
+Services are owned by groups of users. Members of the group can be simple
+members or group managers. All group members can view the service and also
+create requests for that service. Group managers can also invite or remove
+members to and from the group. When a user requests to registrer a service an
+owners group is automatially created for that service, note that the creator of
+this request is also a group manager.
+
+Group Management Page View with explanations <ImageExpand image_url="/screenshots/owners_group.png" />
+
+To manage/view the owners group of a service we must locate target service in
+the List View and select the Manage Services in the more options menu. Once in
+the Manage Group page the user can View group members
+
+- Leave the group (a group must have at least on user and one group manager)
+- Send an Invitation Link to an email address using the email invitation box
+  (Only group managers, and administrators)
+- View pending invitations (Only group managers)
+- Renew/Resend an Invitation (Only group managers)
+- Remove Group Members (Only group managers)
+
 ### View Service History
 
 After a service is registered a user can access all requests that have been
@@ -145,28 +167,6 @@ Review Service View screenshot with explanations <ImageExpand image_url="/screen
 Review Reconfiguration Request screenshot with explanations <ImageExpand image_url="/screenshots/review_edit.png" />
 
 Review Box screenshot with explanations <ImageExpand image_url="/screenshots/review_box.png" />
-
-## Manage Ownership of a Service
-
-Services are owned by groups of users. Members of the group can be simple
-members or group managers. All group members can view the service and also
-create requests for that service. Group managers can also invite or remove
-members to and from the group. When a user requests to registrer a service an
-owners group is automatially created for that service, note that the creator of
-this request is also a group manager.
-
-Group Management Page View with explanations <ImageExpand image_url="/screenshots/owners_group.png" />
-
-To manage/view the owners group of a service we must locate target service in
-the List View and select the Manage Services in the more options menu. Once in
-the Manage Group page the user can View group members
-
-- Leave the group (a group must have at least on user and one group manager)
-- Send an Invitation Link to an email address using the email invitation box
-  (Only group managers, and administrators)
-- View pending invitations (Only group managers)
-- Renew/Resend an Invitation (Only group managers)
-- Remove Group Members (Only group managers)
 
 ## Integration Environments
 
