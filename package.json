@@ -9,7 +9,8 @@
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
-    "clear": "docusaurus clear"
+    "clear": "docusaurus clear",
+    "postbuild":"mv build/* ../docs"
   },
   "dependencies": {
     "@docusaurus/core": "^2.0.0-beta.ff31de0ff",
