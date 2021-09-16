@@ -18,10 +18,4 @@ environment.
 
 The following document will try to cover step by step all different
 functionalities and use cases. Users of the application should to follow the
-guidelines provided and submit feedback for any issues they encounter.
-
-The instance used for testing can be found at the following URL
-[https://http://aai.egi.eu/federation](https://http://aai.egi.eu/federation)
-
-Send us feedback,report problems and bugs using the form by following the link
-[https://forms.gle/rnAq7bBT4bN7WiNYA](https://forms.gle/rnAq7bBT4bN7WiNYA)
+guidelines provided in this documentation.
