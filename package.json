@@ -10,11 +10,12 @@
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
-    "postbuild":"mv build/* ../docs"
+    "postbuild": "mv build/* ../docs"
   },
   "dependencies": {
     "@docusaurus/core": "^2.0.0-beta.ff31de0ff",
     "@docusaurus/preset-classic": "^2.0.0-beta.ff31de0ff",
+    "@docusaurus/theme-classic": "^2.0.0-beta.ff31de0ff",
     "@mdx-js/react": "^1.6.21",
     "bootstrap": "^4.6.0",
     "clsx": "^1.1.1",
