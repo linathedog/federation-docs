@@ -55,7 +55,7 @@ module.exports = {
           ],
         },
       ],
-       copyright: `<img alt="grnet" src="/img/grnet-logo.png" height="50px"> </a> <br /> Copyright © ${new Date().getFullYear()} <a href="http://www.grnet.gr/"> GRNET </a>`,
+      copyright: `<img alt="grnet" src="/img/grnet-logo.png" height="50px"> </a> <br /> Copyright © ${new Date().getFullYear()} <a href="http://www.grnet.gr/"> GRNET </a>`,
     },
   },
   presets: [
@@ -65,14 +65,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/rciam/rciam-federation-registry',
-        },
-        api: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://federation.rciam.grnet.gr/swagger',
+          editUrl: 'https://github.com/rciam/rciam-federation-registry',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
