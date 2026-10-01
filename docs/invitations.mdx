@@ -4,25 +4,33 @@ title: Invitations
 sidebar_label: Invitations
 slug: /invitations
 ---
-import {ImageExpand} from '../src/components/components';
+To manage an existing service, a user must belong to its owners group. The
+registration requester is added automatically; a group manager can invite
+additional owners by email from the service's **Manage Owners** page.
 
-To manage a service in Federation Registry and be able to create requests users must be members of the owners group. 
-When a user submits a registration request they are automatically added to the owners group for that service and 
-additional users can also be added by sending invitations.
-Invitations are sent in the form of an email containing an invitation link. The invitation link will lead the user to 
-federation registry and upon login the invitation will be activated and linked to their account. All pending invitations will be displayed 
-in the invitations page, where the user can respond to each invitation by either accepting it or declining it.
+## Accept or decline an invitation
 
-Users that have pending invitations will also be notified through a notification alert in the top of the Manage Services page.
+1. Open the invitation link from the email.
+2. Log in through the authentication proxy if necessary. Use the same identity
+   to which the invitation should be linked.
+3. Review the service and group role in the Invitations page.
+4. Select **Accept** to join the owners group or **Decline** to reject it.
 
-Invitation Page View with explanations <ImageExpand image_url='/screenshots/invitations_page.png'/>
+#### Invitations page with accept and decline actions
 
-Invitation Notifications <ImageExpand image_url='/screenshots/invitations_notification.png'/>
+![Invitations page with accept and decline actions](/img/screenshots/invitations_page.png)
 
-## Have you recieved an email invitation to manage a service through the Federation Registry?
+Pending invitations also appear as a notification above the Manage Services
+list. An already activated invitation remains available from the Invitations
+page until you respond.
 
-Steps you need to take:
+#### Pending-invitation notification
 
-1. Follow the invitation link
-2. Log in via the Authentication Proxy(optional - this will not be necessary if you are already logged into the Federation Registry)
-3. Accept the service owner role. As a group manager you should then be able to invite additional users for managing the service. Please refer to the documentation [Managing the Ownership of a Service](service_list#manage-ownership-of-a-service) for more information.
+![Pending-invitation notification](/img/screenshots/invitations_notification.png)
+
+Accepting an invitation gives the permissions associated with the group role
+and instance configuration. A group manager can invite or remove other members;
+a regular member cannot manage membership. See
+[Manage ownership of a service](service_list#manage-ownership-of-a-service).
+
+If a link has expired, ask a group manager to renew or resend the invitation.

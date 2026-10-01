@@ -5,38 +5,38 @@ sidebar_label: Outdated Services
 slug: /outdated_services
 ---
 
-import {ImageExpand} from '../src/components/components';
+## Why a service is marked outdated
 
-## Why is my service flagged as outdated?
+Technical and policy requirements can change after a service is registered. A
+service is marked **Outdated** when its stored configuration no longer satisfies
+the current rules for its tenant and environment—for example, a newly required
+field is missing or a previously accepted value is no longer valid.
 
-In some cases it might be necessary to make updates to the service configuration
-in order to:
+#### Outdated alert
 
-- Improve compliance with the technical and policy baseline of the
-  infrastructure;
-- Ensure the security and integrity of the service configuration;
-- Comply with agreements with Peer Federations;
-- Improve interoperability; All services registered in the Fedetation Registry
-  should meet the technical and policy baseline. Each integration environment
-  may have different specifications for the registered services. Services that
-  have invalid values or are missing some required information in their
-  configuration are flagged as outdated.
+![Outdated alert](/img/screenshots/outdated_alert.png)
 
-## What happens when my service is flagged as outdated?
+The marker can be introduced to improve security, interoperability, policy
+compliance, or compatibility with peer federations. It does not by itself mean
+that the remote service has been disabled.
 
-If a service is flagged as outdated it continues to be functional and you will
-get notified that you need to update the service configuration to follow the
-technical and policy baseline. Notifications will be sent in a regular basis
-until you submit a request to update the service configuration.
+## Update an outdated service
 
-## How can I update a service flagged as outdated?
+1. Open **Manage Services** and enable the outdated-services filter.
+2. Locate the service marked **Outdated** and select **Reconfigure**.
+3. Review every form tab. Invalid or missing values are highlighted with a
+   validation message.
+4. Correct the configuration and submit the reconfiguration request.
+5. Follow its review and deployment states as usual.
 
-1. Connect to the Fedetation Registry at https://aai.egi.eu/federation using
-   your Check-in identity you have registered as a service owner
-2. Identify your outdated services using the "Show Outdated Filter" (Outdated
-   Services can also be identified from the Outdated status badge and the red
-   exclamation on the "Reconfigure" button)
-3. Click the "Reconfigure" button to create a new request to reconfigure your
-   service with the required information (Invalid fields will be highlighted and
-   an error message will describe the issue)
-4. Submit your request
+#### Outdated filter and services
+
+![Outdated filter and services](/img/screenshots/outdated_filter.png)
+
+#### Outdated service and validation messages
+
+![Outdated service and validation messages](/img/screenshots/outdated_service.png)
+
+Owners can receive periodic notifications until a corrective request is
+submitted. Requirements can differ between environments, so resolve the errors
+shown for the service's actual target environment.

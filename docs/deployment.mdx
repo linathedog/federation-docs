@@ -4,11 +4,38 @@ title: Deployment Process
 sidebar_label: Deployment Process
 slug: /deployment
 ---
-import {ImageExpand} from '../src/components/components';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+Approval and deployment are separate stages. Final approval accepts a service
+request and starts an asynchronous operation against the target infrastructure:
 
-Once a service request is approved changes have to be deployed on some remote system. If it is a registration request a new service must be deployed, if it is a reconfiguration request changes must be made to the deployed service and if it is a deregistration request a deployed service must be deleted.
-Services are managed by remote tools (MitreId, SSP, Keycloak) and when a request is approved federation registry initiates a process to deploy the changes that have been requested. This is an automated asynchronous process that uses the argo messaging service to communicate with these remote systems. Services that undergo this process are under waiting deployment status and although they will be displayed in service list view and can be viewed, users will be blocked from creating service requests until the service is deployed.
-Reconfiguration requests that dont change information that is tracked by the remote systems will be deployed immediatelly. 
+- Registration creates the remote service configuration;
+- Reconfiguration updates it; and
+- Deregistration removes it.
 
-![img](../static/img/screenshots/deployment_process.png)
+#### Deployment process overview
+
+![Deployment process overview](/img/screenshots/deployment_process.png)
+
+While deployment is in progress, the service is shown with a waiting deployment
+state. You can view it, but further service requests are normally blocked until
+deployment completes. A reconfiguration that changes only Registry-managed
+information may complete immediately because no remote update is required.
+
+## Deployment failures
+
+A failed deployment does not mean the request is waiting for review. The
+request has already been approved, but the target infrastructure could not
+apply it. The service entry displays a malfunction or error indicator.
+
+#### Service with a deployment error
+
+![Service with a deployment error](/img/screenshots/service_list_error.png)
+
+Open the service to inspect the reported error. If your permissions include
+deployment recovery, the error panel offers the actions configured for that
+failure. Otherwise, provide the service name, target environment, and displayed
+error to the tenant's support team. Do not create a duplicate registration to
+work around the failure.
+
+#### Deployment error details and available actions
+
+![Deployment error details and available actions](/img/screenshots/error_box.png)

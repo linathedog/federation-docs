@@ -1,31 +1,40 @@
 ---
 id: user_roles
-title: Users And Roles
-sidebar_label: Users And Roles
+title: Users and Roles
+sidebar_label: Users and Roles
 slug: /users
 ---
 
+Federation Registry permissions are configurable for each instance. Identity
+attributes returned by the authentication proxy are mapped to roles, and roles
+grant individual actions. Environment and service ownership can further limit
+those actions. Therefore, role names are descriptive examples; the actions
+visible in the application are the reliable guide for your account.
 
-In the Federation registry user roles are assigned to users based on entitlements granted by the EGI-checkin authentication proxy. Roles are designed to be flexible meaning there can be any number of roles with different access to the various actions in the registry. These actions include creating requests, viewing services, reviewing requests and many others.
+Typical permission groups include:
 
-The Federation registry supports the following roles
+### Service owners
 
-- ### End Users (can take actions only on services owned by them)
-  - Viewing services and service requests
-  - Create registration requests
-  - Create reconfiguration or deregistration requests
-  - Editing pending requests
-  - Viewing history of the service
-  - Cancel pendings requests
-  - View the owners group of a service
+- view services they own and their request history;
+- create registration requests;
+- reconfigure or deregister owned services;
+- edit or cancel pending requests; and
+- view the owners group, with membership management available to group managers.
 
+### Operators and reviewers
 
-- ### Operators
-  - All the above
-  - View services and requests owned by other users
-  - Review requests owned by other users
-  - View Errors and act upon errors that occur in the deployment process
+- view services within their assigned scope;
+- review requests and request corrections;
+- inspect deployment failures and, when authorised, trigger recovery actions;
+  and
+- use configured reporting or notification tools.
 
-- ### Managers
-  - Everything that an Operator can do
-  - Approve requests that target a restricted environment 
+### Managers or policy reviewers
+
+- perform operator actions; and
+- take an additional approval step for environments or requests that require
+  policy review.
+
+Use [User Information](user-information) to inspect the identity attributes
+received for your account. Contact the tenant administrator if an expected
+action is unavailable.

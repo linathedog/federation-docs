@@ -4,17 +4,32 @@ title: Landing Page and Login
 sidebar_label: Landing Page and Login
 slug: /login
 ---
-import {ImageExpand} from '../src/components/components';
+The landing page identifies the Federation Registry tenant and provides the
+**Login** action. Authentication is handled by the tenant's authentication
+proxy; Federation Registry does not ask you to create a separate password.
 
-To login to the platform use the login button to the top right. This will
-redirect user to the tenant's authentication proxy to select an identity
-provider and login. After giving consent the user will be redirected back to the
-Federation Registry portal.
+#### Federation Registry landing page and Login action
 
-Login Steps:
+![Federation Registry landing page and Login action](/img/screenshots/landing_page.png)
 
-1. Go to the Landing Page and use the login button
-1. Select an identity provider from the provided list
-1. Give consent
-1. User is redirected back to federation registry (indicated on the top right of
-   the screen is the username and the role assigned to the user)
+To sign in:
+
+1. Select **Login** on the landing page.
+2. Select your identity provider from the list presented by the authentication
+   proxy.
+3. Authenticate with that provider.
+4. Review and accept the consent request, if one is shown.
+5. You are redirected to Federation Registry. Your user menu is displayed in
+   the upper-right corner.
+
+#### Identity provider selection
+
+![Identity provider selection](/img/screenshots/select_idp.png)
+
+#### Authentication consent page
+
+![Authentication consent page](/img/screenshots/consent.png)
+
+Your access is determined from information returned by the authentication
+proxy. Consequently, the services and actions visible to you can differ from
+those available to another user. See [Users and Roles](users) for details.

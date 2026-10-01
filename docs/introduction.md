@@ -5,17 +5,26 @@ sidebar_label: Introduction
 slug: /
 ---
 
+Federation Registry is a web application for registering and managing OpenID
+Connect (OIDC) and SAML services in a federated authentication infrastructure.
+The available environments, form fields, policies, and user permissions depend
+on the instance configuration.
 
-Federation Registry provides a secure web interface through which Service Owners
-can register and manage their OpenID Connect and Saml based Services.
+Service owners manage a service by submitting **service requests**. A request
+can register a new service, reconfigure an existing service, or deregister a
+service. A request is not the deployed service configuration: it must first be
+reviewed and approved. Approval starts an asynchronous deployment to the target
+infrastructure, and deployment can finish or fail independently of the review.
 
-Users in this portal can view and also manage their Services through creating
-and submitting Service Requests. There are three types of requests that can be
-made: registration, reconfiguration and deregistration. Once a request is
-submitted users with reviewing privileges are notified and can view and review
-them. If a petition is approved then it is deployed to the requested integration
-environment.
+This manual explains how to:
 
-The following document will try to cover step by step all different
-functionalities and use cases. Users of the application should to follow the
-guidelines provided in this documentation.
+- Sign in and inspect your user information;
+- Register, view, reconfigure, copy, and deregister services;
+- Edit or cancel pending requests and respond to requested changes;
+- Manage service owners and invitations;
+- Review requests and follow deployment;
+- Maintain outdated services; and
+- Use privileged management tools when your assigned permissions allow it.
+
+Start with [Landing Page and Login](login), then use
+[Services and Service Requests](service_list) as the main workflow guide.

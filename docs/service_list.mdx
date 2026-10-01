@@ -4,199 +4,254 @@ title: Services and Service Requests
 sidebar_label: Services and Service Requests
 slug: /service_list
 ---
-import { ImageExpand } from "../src/components/components";
-
 ## Manage Services
 
-Services can be managed by accessing the Manage Services page available in the
-side menu on the left of the screen. In the Manage Services page a user can view
-all the Services they own. Each Service is listed, the table as shown above.
-Service owners can view basic information about Services they own such as the
-service name, service description, the environment the service is integrated
-(see [Integration Environments](#integration-environments)), it's current
-deployment status (see [Deployment](#deployment)) and some of the available
-actions for each Service.
+Open **Manage Services** from the side menu to see the services available to
+you. Each entry shows summary information such as the service name,
+description, target environment, request state, and deployment state. The
+actions shown on an entry depend on the state of the service and on your
+permissions.
 
-- Service list view <ImageExpand image_url="/screenshots/service_list_view.png" />
+Use the search box and filters to narrow the list. For example, you can filter
+for services with pending requests, deployment failures, or outdated
+configurations.
 
-Users can manage their services by creating service requests. A Service Request
-can request either to register, reconfigure or deregister a service, users can
-create edit and cancel Service Requests for services they own:
+#### Manage Services list and available actions
 
-### **Available Actions**
+![Manage Services list and available actions](/img/screenshots/service_list_view.png)
 
-- [View Services](#view-service)
-- [Register a Service](#create-a-registration-request)
-- [Reconfigure a Service/Edit a Service Request](#create-a-reconfiguration-request-or-edit-an-open-request)
-- [Deregister a Service](#create-a-deregistration-request)
-- [Cancel Pending Service Request](#cancel-pending-request)
-- [Respond to Changes Requested to a Request](#changes-requested)
-- [Manage Ownership of a Service](#manage-ownership-of-a-service)
-- [View Service History](#view-service-history)
-- [Review a Request (Only on testing envrironments)](#review-a-service-request)
+A **service request** proposes a change. The currently approved configuration
+remains distinct from that request until it is approved and deployed. There are
+three request types:
 
-### View Service
+- **Registration** creates a new service.
+- **Reconfiguration** changes an existing service.
+- **Deregistration** removes an existing service from the target environment.
 
-Viewing a service configuration is available from the the view button on a
-service list item. The full service configuration is split between two tabs, the
-General Tab and the Protocol Tab. The General tab contains information described
-in the
-[General Information](https://docs.egi.eu/providers/check-in/sp/#general-information)
-section and the Protocol Tab information differs depending on the service
-protocol. For SAML services refer to the
-[Saml Service Provider](https://docs.egi.eu/providers/check-in/sp/#saml-service-provider)
-section and for OIDC services to the
-[OpenID Connect Service Provider](https://docs.egi.eu/providers/check-in/sp/#openid-connect-service-provider)
-section for more details.
+## View a service
 
-- Service View with explanations <ImageExpand image_url="/screenshots/view_service.png" />
+Select **View** on a service entry to inspect its complete configuration. The
+view is divided into the same sections as the request form:
 
-### Create a Registration Request
+- **General** contains identification, descriptive, contact, and environment
+  information.
+- **Advanced** contains the Configuration Profile and the applicable OIDC or
+  SAML configuration.
+- **Policy** contains the policy information applicable to the service.
 
-To create a new service a user must create a registration request by clicking
-the new service button in the toolbar located in the manage services page. This
-button redirects the user to a new page where he will have to fill out a form by
-providing the following information.
+#### Service configuration view
 
-- General information about the service (Service Name, Description) located in
-  the first tab. More info on the
-  [General Information](https://docs.egi.eu/providers/check-in/sp/#general-information)
-  section
-- And more specific technical information in the second tab concerning the
-  protocol of the service SAML/OIDC. More info on the
-  [Saml Service Provider](https://docs.egi.eu/providers/check-in/sp/#saml-service-provider)
-  and the
-  [OpenID Connect Service Provider](https://docs.egi.eu/providers/check-in/sp/#openid-connect-service-provider)
-  sections respectively.
+![Service configuration view](/img/screenshots/view_service.png)
 
-### Create a Reconfiguration Request or edit an Open Request
+## Register a service
 
-To create a reconfiguration request for a service or edit a pending request the
-service must be at a Deployed state. To find a specific service in the service
-list view users can use the filters or the search box provided in the Service
-List page toolbar and then use the Reconfigure button to create a request or
-edit a pending request for that service. The reconfiguration button will open a
-new page containing the current state of the service or of the pending request.
-User can edit any of the fields and submit the request.
+1. Select **New Service** on the Manage Services toolbar.
+2. Complete the General tab.
+3. In the Advanced tab, first choose the Configuration Profile that describes
+   the service. The form then reveals the relevant fields.
+4. Complete any applicable fields in the Policy tab.
+5. Resolve the validation messages shown on the tabs and submit the request.
 
-### Create a Deregistration Request
+### General tab
 
-To create a Deregistration Request for a Service, the service must be in a
-Deployed state. To find it in the service list view the user can use the filters
-or the search box provided in the Service List page toolbar and then click the
-more options located in the top right corner of the service box and select the
-Deregister Service option.
+Provide the service identity and descriptive information requested by the
+tenant. This normally includes the service name, description, target
+integration environment, website or logo information, and contacts. Required
+fields can vary by environment.
 
-### Cancel Pending Request
+#### General tab of the registration form
 
-Canceling a pending service request can either be done in the more options menu
-or in the edit request page (accessed using the reconfiguration button when
-there is a pending request) by using the cancel request option.
+![General tab of the registration form](/img/screenshots/general_tab.png)
 
-More Options Cancel Request Option <ImageExpand image_url="/screenshots/cancel_request_list.png" />
+### Advanced tab and Configuration Profiles
 
-Cancel Request In the Edit Request Page <ImageExpand image_url="/screenshots/cancel_request_form.png" />
+Select a Configuration Profile before entering the technical configuration:
 
-### Changes Requested
+- **Machine-to-Machine (M2M)** is for a client that accesses another service on
+  its own behalf, without an interactive end user. It uses the OAuth 2.0 Client
+  Credentials grant.
+- **Resource Server (API)** is for an API or protected resource that accepts
+  access tokens and does not provide interactive user login.
+- **Advanced / Custom** exposes the configurable protocol options for services
+  that do not fit the predefined profiles.
 
-A reviewer can request changes to a submitted request and provide some feedback
-describing changes that need to be made to the service configuration. Service
-owners will get an email notification and should login to the platform and edit
-their request. Services that have pending requests with requested changes can be
-identified by the Changes Requested badge next to their name and from the red
-exclamation mark on the Reconfiguration Button. When editing their request users
-can view the comment left from the reviewer. Submitting the request will resolve
-the changes requested by the reviewer and Service will once again be in the
-pending review state.
+The selected profile determines which fields and allowed values appear. For an
+Advanced / Custom configuration, select OIDC or SAML and complete the fields
+revealed for that protocol. Further OIDC fields can appear according to the
+selected grants and client authentication capabilities.
 
-### Manage Ownership of a Service
+#### Configuration Profile selector
 
-Services are owned by groups of users. Members of the group can be simple
-members or group managers. All group members can view the service and also
-create requests for that service. Group managers can also invite or remove
-members to and from the group. When a user requests to registrer a service an
-owners group is automatially created for that service, note that the creator of
-this request is also a group manager.
+![Configuration Profile selector](/img/screenshots/configuration_profile.png)
 
-Group Management Page View with explanations <ImageExpand image_url="/screenshots/owners_group.png" />
+Typical OIDC information includes redirect URIs, scopes, grant types, client
+authentication, token introspection, refresh-token, and PKCE settings. Typical
+SAML information includes the entity ID, metadata source, and requested
+attributes. The exact fields and defaults are tenant- and environment-specific.
 
-To manage/view the owners group of a service we must locate target service in
-the List View and select the Manage Services in the more options menu. Once in
-the Manage Group page the user can View group members
+### Policy tab
 
-- Leave the group (a group must have at least on user and one group manager)
-- Send an Invitation Link to an email address using the email invitation box
-  (Only group managers, and administrators)
-- View pending invitations (Only group managers)
-- Renew/Resend an Invitation (Only group managers)
-- Remove Group Members (Only group managers)
+Complete the privacy policy, terms of use or acceptable use policy, and any
+other policy fields required by the tenant. Some fields are shown only when the
+selected protocol and grants describe a user-facing service.
 
-### View Service History
+#### Policy tab and applicable policy fields
 
-After a service is registered a user can access all requests that have been
-reviewed for that service in View History page which can be accessed through the
-more options menu in the Service List page located in the top right corner of
-each service box. All reviewed requests are listed in the History View in
-chronological order starting from registration. User can view each snapshot
-which contains the full configuration using the View Button.
+![Policy tab and applicable policy fields](/img/screenshots/policy_tab.png)
 
-View History Page View with explanations <ImageExpand image_url="/screenshots/history_list.png" />
+## Reconfigure a service or edit an open request
 
-### Review a Service Request
+Use the search and filters to locate the service, then select **Reconfigure**.
+If no request is open, the form starts from the approved configuration and a
+submission creates a reconfiguration request. If a request is already open,
+the same action opens that request for editing.
 
-To find services with pending requests users can use the Pending Services
-filter. When a service has a pending request the review button will be available
-in the service box item. By using the Review Button users can view the requested
-service configuration and submit a review using the expandable review menu. A
-review can either:
+Change the required fields, review all tabs for validation errors, and submit.
+During review, changed fields may be highlighted so reviewers can compare the
+proposal with the approved configuration.
 
-- **Approve**: approving a request starts the deployment of the requested
-  service configuration described in the reviewed request.
-- **Reject**: if the reviewer decides that the requested is not valid he can
-  reject it canceling the request.
-- **Request Changes**: reviewer can propose changes to the pending request by
-  leaving a comment describing the changes that have to be made.
+#### Create Reconfiguration request
 
-> The Review option will be available to
-service owners only for Services integrated in the development instance of EGI
-Check-in
+![Create Reconfiguration request](/img/screenshots/reconfiguration.png)
 
-Review Service View screenshot with explanations <ImageExpand image_url="/screenshots/review_form.png" />
+## Deregister a service
 
-Review Reconfiguration Request screenshot with explanations <ImageExpand image_url="/screenshots/review_edit.png" />
+Locate a deployed service, open its **More options** menu, and select
+**Deregister Service**.
 
-Review Box screenshot with explanations <ImageExpand image_url="/screenshots/review_box.png" />
+#### Deregister a service
 
-## Integration Environments
+![Deregister a service](/img/screenshots/deregistration.png)
 
-Using Federation Registry users can register their SAML and OIDC services to
-multiple instances of EGI Check-in
+Review the confirmation carefully and submit the
+deregistration request. The service is removed from the target infrastructure
+only after the request is approved and deployment succeeds.
 
-- **Development**: The development is used for testing a service configuration
-  and service owners can review their own requests.
-- **Demo**: The demo environment is used to test Production Ready Services.
-  Petitions are reviewed only by Technical reviewers.
-- **Production**: The production instance allows members of the EGI User
-  Community to access your service. This requires that your service meets some
-  additional requirements such as a valid Policy Url and compliance with the
-  code of conduct of EGI. In addition request have to go through a double
-  approval phase from technical reviewer and a policy reviewer.
+#### Deregistration request confirmation
 
-## Review a Service Request (Users with reviewing rights)
+![Deregistration request confirmation](/img/screenshots/deregistration_confirmation.png)
 
-Users with reviewing privileges are notified when a new request is created and
-is pending review. To find services with pending requests users can use the
-Pending Services filter. When a service has a pending request the review button
-will be available in the service box item. By clicking that button a user can
-view the requested service configuration and submit a review using the review
-expandable menu. A review can either:
+## Cancel a pending request
 
-- **Approve**: approving a request starts the deployment of the requested
-  service configuration described in the reviewed request.
-- **Reject**: if the reviewer decides that the requested is not valid he can
-  reject it canceling the request.
-- **Request Changes**: reviewer can propose changes to the pending request by
-  leaving a comment describing the changes that have to be made.
+You can cancel a pending request from the service's **More options** menu or
+from the request edit page. Cancellation discards the proposed request; it does
+not remove the currently approved and deployed configuration.
 
-\*Important note: Notifications are sent via email to the reviewers when a new
-request is created and to service owners when the request is reviewed.
+#### Cancel Request action in the service list
+
+![Cancel Request action in the service list](/img/screenshots/cancel_request_list.png)
+
+#### Cancel Request action on the request edit page
+
+![Cancel Request action on the request edit page](/img/screenshots/cancel_request_form.png)
+
+## Respond to requested changes
+
+A reviewer can return a request with a comment describing required changes.
+Service owners are notified by email, and the service is marked **Changes
+Requested** in the list.
+#### Reviewer requested changes
+
+![Reviewer requested changes](/img/screenshots/changes_requested_list.png)
+
+1. Select **Reconfigure** on the marked service to reopen the request.
+2. Read the review comment and update the request.
+3. Resolve any validation errors and resubmit it.
+
+Resubmission returns the request to pending review; it does not approve or
+deploy it automatically.
+
+#### Request with reviewer comments and Changes Requested status
+
+![Request with reviewer comments and Changes Requested status](/img/screenshots/changes_form.png)
+
+## Copy a service to another environment
+
+When the tenant provides multiple integration environments, the copy
+action can use an existing service as the starting point for a registration in
+another environment. Select the target environment, review the copied values,
+and edit environment-specific endpoints, contacts, or policies before
+submitting. The result is a new registration request and still requires review.
+
+#### Copy service action
+
+![Copy service action](/img/screenshots/copy_service.png)
+
+#### Copy service dialog
+
+![Copy service dialog](/img/screenshots/copy_dialog.png)
+
+
+## Manage ownership of a service
+
+Every service has an owners group. The user who submits the registration is
+added automatically as a group manager. Group members can view and manage the
+service according to their permissions; group managers can also manage group
+membership.
+
+Open **More options** for the service and select **Manage Owners**. From the
+owners page, an authorised user can:
+
+- View members and their group role;
+- Invite a user by email as a member or group manager;
+- Inspect, resend, or renew pending invitations;
+- Remove a member
+- Leave the group, provided the group retains at least one member and manager.
+
+#### Service owners-group management page
+
+![Service owners-group management page](/img/screenshots/owners_group.png)
+
+See [Invitations](invitations) for the recipient's workflow.
+
+## View service history
+
+After a service has been registered, select **View History** from its **More
+options** menu. The history lists reviewed requests in chronological order,
+starting with registration. Open an entry to see the complete configuration
+snapshot associated with that request.
+
+#### Service request history
+
+![Service request history](/img/screenshots/history_list.png)
+
+## Review a service request
+
+This action is visible only to users who have the required review permission
+for the service and environment. Use the pending-request filter to find work,
+then select **Review** on a service.
+
+Inspect the full request and, for reconfiguration, the highlighted differences.
+The available decisions are:
+
+- **Approve** accepts the request and starts deployment.
+- **Request changes** returns it to the owners with a comment explaining what
+  must be corrected.
+- **Reject** closes the request without changing the approved configuration.
+
+Some tenants use more than one approval stage for restricted environments. In
+that case, the request proceeds to the next review stage before deployment.
+Reviewers and owners receive email notifications at the configured stages.
+
+#### Service request review page
+
+![Service request review page](/img/screenshots/review_form.png)
+
+#### Reconfiguration review with highlighted changes
+
+![Reconfiguration review with highlighted changes](/img/screenshots/review_edit.png)
+
+#### Review decision panel
+
+![Review decision panel](/img/screenshots/review_box.png)
+
+## Integration environments
+
+A tenant can expose several environments, commonly for development, testing,
+and production. Each environment can have different endpoints, validation
+rules, policy requirements, and review stages. Select the environment that
+matches the intended use of the service and do not assume that values accepted
+in one environment are valid in another.
+
+After the final approval, follow the service's deployment state as described in
+[Deployment Process](deployment).
